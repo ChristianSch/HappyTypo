@@ -1,0 +1,19 @@
+{
+  "name": "HappyTypo",
+  "version": "0.0.0",
+  "description": "Lightweight angular module for fixing micro typography issues in german texts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChristianSch/HappyTypo.git"
+  },
+  "keywords": [
+    "typography",
+    "angularjs"
+  ],
+  "author": "Christian Schulze",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChristianSch/HappyTypo/issues"
+  },
+  "homepage": "https://github.com/ChristianSch/HappyTypo"
+}
