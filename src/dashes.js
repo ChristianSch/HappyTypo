@@ -8,7 +8,7 @@ angular.module('HappyTypo.dashes', [])
         function(mdash) {
             /**
              * Replaces `--` with actual m dash
-             * 
+             *
              * @param  {String} text to replace dashes in
              * @return {String}      text with replaced dashes
              */
@@ -21,7 +21,7 @@ angular.module('HappyTypo.dashes', [])
         function(ndash) {
             /**
              * Replaces `-` with actual n dash
-             * 
+             *
              * @param  {String} text to replace dashes in
              * @return {String}      text with replaced dashes
              */
@@ -34,7 +34,7 @@ angular.module('HappyTypo.dashes', [])
         function(MDashReplaceService, NDashReplaceService) {
             /**
              * Replaces `--` with m dashes and `n` with n dashes
-             * 
+             *
              * @param  {String} text to replace dashes in
              * @return {String}      text with replaced dashes
              */
@@ -42,8 +42,8 @@ angular.module('HappyTypo.dashes', [])
                 // first replace mdashes then ndashes. otherwise `--` would
                 // result in two ndashes and not one mdash as it’s supposed to
                 // be.
-                return NdashReplaceService.replaceNDashes(
-                    MdashReplaceService.replaceMDashes(text));
+                return NDashReplaceService.replaceNDashes(
+                    MDashReplaceService.replaceMDashes(text));
             };
         }
     ])
@@ -54,7 +54,7 @@ angular.module('HappyTypo.dashes', [])
              * Replaces `--` with actual m dashes
              *
              * @see MDashReplaceService
-             * 
+             *
              * @param  {String} text to replace dashes in
              * @return {String}      text with replaced dashes
              */
@@ -70,7 +70,7 @@ angular.module('HappyTypo.dashes', [])
              * Replaces `-` with actual n dashes
              *
              * @see NDashReplaceService
-             * 
+             *
              * @param  {String} text to replace dashes in
              * @return {String}      text with replaced dashes
              */
@@ -85,7 +85,7 @@ angular.module('HappyTypo.dashes', [])
              * Filter to use `DashReplaceService` in directives.
              *
              * @see DashReplaceService
-             * 
+             *
              * @param  {String} text to replace dashes in
              * @return {String}      text with replaced dashes
              */
