@@ -1,5 +1,6 @@
 'use strict';
 
+
 angular.module('HappyTypo.ellipse', [])
     .constant('ELLIPSE', '&hellip;')
     .factory('EllipseReplaceService', ['ELLIPSE',
@@ -9,8 +10,13 @@ angular.module('HappyTypo.ellipse', [])
              * @param  {String} text to replace ellipsis in
              * @return {String}      text with replaced ellipses
              */
-            return function replaceEllipse(text) {
-                return text.replace('...', ELLIPSE);
+            function replaceEllipse(text) {
+                return text.replace(/\.\.\./g, ELLIPSE);
+            }
+
+            // service api
+            return {
+                replaceEllipse: replaceEllipse
             };
         }
     ])
