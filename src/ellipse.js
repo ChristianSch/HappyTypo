@@ -12,8 +12,9 @@ angular.module('HappyTypo.ellipse', [])
              */
             function replaceEllipse(text) {
                 return text.replace(/\.\.\./g, ELLIPSE);
-            };
+            }
 
+            // service api
             return {
                 replaceEllipse: replaceEllipse
             };
