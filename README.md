@@ -8,7 +8,7 @@ HappyTypo
 Lightweight angular module for fixing micro typography issues in german texts.
 
 ## Details
-HyppTypo replaces typographically wrong used symbols with their html symbol pedants. At the moment there is only support for dashes (mdash: `--` and ndash: `-`) and the ellipse (`...`).
+HyppTypo replaces typographically wrong used symbols with their respective html symbols. At the moment HappyTypo only supports dashes (mdash: `--` and ndash: `-`) and the ellipse (`...`).
 
 ## Usage
 Download the [latest version](https://github.com/ChristianSch/HappyTypo/releases/latest) and extract the `.zip` file. This contains a minified version of HappyTypo and a source map for debugging. Just include the HappyTypo javascript file in your angular app and use the filters (see below for examples).
