@@ -63,22 +63,52 @@ module.exports = function(grunt) {
             min: {
                 options: {
                     sourceMap: true,
-                    sourceMapName: 'dist/happytypo_<%= pkg.version %>.map',
+                    sourceMapName: 'build/happytypo_<%= pkg.version %>.map',
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */'
                 },
                 files: {
-                    'dist/happytypo_<%= pkg.version %>.min.js': '<%= paths.js %>'
+                    'build/happytypo_<%= pkg.version %>.min.js': '<%= paths.js %>'
                 }
             }
-        }
+        },
+
+        clean: {
+            pre: ['dist/', 'build/'],
+            post: ['build/', 'happytypo_<%= pkg.version %>.zip']
+        },
+
+        compress: {
+            main: {
+                options: {
+                    archive: 'happytypo_<%= pkg.version %>.zip'
+                },
+                expand: true,
+                cwd: 'build/',
+                src: ['**/*'],
+                dest: ''
+            }
+        },
+
+        copy: {
+            archive: {
+                files: [{
+                    expand: true,
+                    src: ['happytypo_<%= pkg.version %>.zip'],
+                    dest: 'dist/'
+                }]
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-jsbeautifier');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('default', ['jshint', 'jsbeautifier:check']);
     grunt.registerTask('beautify', ['jsbeautifier:beautify']);
-    grunt.registerTask('dist', ['uglify:min']);
+    grunt.registerTask('release', ['clean:pre', 'uglify:min', 'compress', 'copy:archive', 'clean:post'])
 };
