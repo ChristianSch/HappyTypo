@@ -31,6 +31,10 @@ describe('Testing Modules', function() {
             it('should have HappyTypo.ellipse as a dependency', function() {
                 expect(hasModule('HappyTypo.ellipse')).to.equal(true);
             });
+
+            it('should have HappyTypo.quotes as a dependency', function() {
+                expect(hasModule('HappyTypo.quotes')).to.equal(true);
+            });
         });
     });
 });
