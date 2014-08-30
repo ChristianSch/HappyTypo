@@ -2,5 +2,6 @@
 
 angular.module('HappyTypo', [
     'HappyTypo.ellipse',
-    'HappyTypo.dashes'
+    'HappyTypo.dashes',
+    'HappyTypo.quotes'
 ]);
