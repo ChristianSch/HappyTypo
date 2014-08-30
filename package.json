@@ -1,6 +1,6 @@
 {
   "name": "HappyTypo",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Lightweight angular module for fixing micro typography issues in german texts",
   "repository": {
     "type": "git",
