@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('HappyTypo.quotes', [])
-    .value(openQuotes,
+    .constant('OPEN_QUOTES',
         // &bdquo; for „
         // &raquo; for »
         // &sbquo; for ‚
         ['&bdquo;', '&raquo;', '&sbquo;'])
-    .value(closingQuotes,
+    .constant('CLOSE_QUOTES',
         // &ldquo; for “
         // &laquo; for «
         // &lsquo; for ‘
@@ -23,8 +23,8 @@ angular.module('HappyTypo.quotes', [])
             };
         }
     ])
-    .factory('PrettyQuoteService', ['$log', 'openQuotes', 'closingQuotes',
-        function($log, openQuotes, closingQuotes) {
+    .factory('PrettyQuoteService', ['$log', 'OPEN_QUOTES', 'CLOSE_QUOTES',
+        function($log, OPEN_QUOTES, CLOSE_QUOTES) {
             /**
              * Parse `"` like quotes into typographical correct quotes
              * obeying hiearchical quotes (german typography).

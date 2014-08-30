@@ -2,10 +2,10 @@
 
 
 angular.module('HappyTypo.dashes', [])
-    .value(ndash, '&ndash;')
-    .value(mdash, '&mdash;')
-    .factory('MDashReplaceService', ['mdash',
-        function(mdash) {
+    .constant('NDASH', '&ndash;')
+    .constant('MDASH', '&mdash;')
+    .factory('MDashReplaceService', ['MDASH',
+        function(MDASH) {
             /**
              * Replaces `--` with actual m dash
              *
@@ -13,12 +13,12 @@ angular.module('HappyTypo.dashes', [])
              * @return {String}      text with replaced dashes
              */
             return function replaceMDashes(text) {
-                return text.replace('--', mdash);
+                return text.replace('--', MDASH);
             };
         }
     ])
-    .factory('NDashReplaceService', ['ndash',
-        function(ndash) {
+    .factory('NDashReplaceService', ['NDASH',
+        function(NDASH) {
             /**
              * Replaces `-` with actual n dash
              *
@@ -26,7 +26,7 @@ angular.module('HappyTypo.dashes', [])
              * @return {String}      text with replaced dashes
              */
             return function replaceNDashes(text) {
-                return text.replace('-', ndash);
+                return text.replace('-', NDASH);
             };
         }
     ])
